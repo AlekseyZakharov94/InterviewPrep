@@ -1,7 +1,7 @@
 package com.Alzakhar.Lesson1.task2;
 
-public abstract class Car {
-    public Engine engine;
+public class Car implements Openable, Moveable, Stopable {
+    private Engine engine;
     private String color;
     private String name;
 
@@ -10,7 +10,10 @@ public abstract class Car {
         System.out.println("Car starting");
     }
 
-    abstract void open();
+    @Override
+    public void open() {
+        System.out.println("The car is open");
+    }
 
     public Engine getEngine() {
         return engine;
@@ -34,5 +37,15 @@ public abstract class Car {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Car is moving");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car is stop");
     }
 }
